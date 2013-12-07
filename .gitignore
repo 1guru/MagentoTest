@@ -1,0 +1,8 @@
+hertybs
+app/etc/local.xml
+media/
+var/cache/
+var/session/
+sitemap/
+var/locks/
+var/backups/

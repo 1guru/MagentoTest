@@ -1,0 +1,20 @@
+ul.tabs a.pagayoall-section span, ul.tabs a.pagayoall-section:hover span {
+    background: transparent url("../images/button-store.png") no-repeat scroll 0 9px;
+    height: 0;
+    overflow: hidden;
+    padding: 35px 0 0;
+}
+
+ul.tabs a.pagayoall-section, ul.tabs a.pagayoall-section:hover {
+    background: url("../../images/tabs_span_bg.gif") repeat-x scroll 0 100% transparent;
+    border-bottom: medium none;
+    padding: 0 0.5em 0.28em 1.5em;
+}
+
+ul.tabs a.pagayoall-section:hover {
+    background-color: #d8e6e6;
+}
+
+ul.tabs a.pagayoall-section.active, ul.tabs a.pagayoall-section.active:hover {
+    background-color: #FFFFFF;
+}
