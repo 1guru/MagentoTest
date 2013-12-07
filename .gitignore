@@ -6,3 +6,6 @@ var/session/
 sitemap/
 var/locks/
 var/backups/
+var/log/
+var/package/
+var/report/
