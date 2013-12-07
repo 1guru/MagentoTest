@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<config>
+
+	<modules>
+		<Pagayo_Main>
+			<version>0.1.0</version>
+		</Pagayo_Main>
+	</modules>
+	
+	 <global>
+        <helpers>
+            <main>
+                <class>Pagayo_Main_Helper</class>
+            </main>
+        </helpers>
+     </global>
+    
+    <adminhtml>
+    	<layout>
+            <updates>
+                <pagayoall module="PAGAYO_MAIN">
+                    <file>pagayo_main.xml</file>
+                </pagayoall>
+            </updates>
+        </layout>
+         <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <pagayostore>
+                                            <title>Pagayo Extensions Store</title>
+                                        </pagayostore>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                   </children>
+               </admin>
+           </resources>
+        </acl>
+    </adminhtml>
+    		    
+</config>

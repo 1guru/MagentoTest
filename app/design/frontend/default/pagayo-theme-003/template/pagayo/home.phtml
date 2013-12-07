@@ -1,0 +1,47 @@
+<div class="homepage">
+	
+	<div id="slider">
+		<div class="slidercontrolwr-left">
+			<div class="slidercontrol">
+				<a href="#" class="aprev" title="Previous" onClick="my_glider.previous();return false;">Previous</a>
+			</div>
+		</div>
+		<div class="slidercontrolwr-right">
+			<div class="slidercontrol">
+				<a href="#" class="anext" title="Next" onClick="my_glider.next();return false">next</a>
+			</div>	
+		</div>
+	    <div class="scroller">
+	    	<div class="content">
+				<div class="section" id="section1">
+					<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt003-home-slider1')->toHtml() ?>
+	    		</div>
+	    		<div class="section" id="section2">
+	    			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt003-home-slider2')->toHtml() ?>
+	    		</div>
+	    		<div class="section" id="section3">
+	    			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt003-home-slider3')->toHtml() ?>
+	    		</div>
+	    	</div>
+	    </div>
+	</div>
+	<script src="<?php echo $this->getSkinUrl('js/') ?>glider.js" type="text/javascript"></script>
+	<script type="text/javascript" charset="utf-8">
+		var my_glider = new Glider('slider', {duration:0.5, autoGlide: true, frequency: 4, initialSection: 'section1'});
+	</script>
+	
+	<div class="home-box1">
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt003-home-box1')->toHtml() ?>
+	</div>
+	<div class="home-box2">
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt003-home-box2')->toHtml() ?>
+	</div>
+	<div class="home-box3">
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt003-home-box3')->toHtml() ?>
+	</div>
+	<div class="home-box4">
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt003-home-box4')->toHtml() ?>
+	</div>
+	<div class="clearer"></div>
+
+</div>

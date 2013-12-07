@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<config>
+
+	<modules>
+		<Pagayo_Pt003>
+			<version>0.1.1</version>
+		</Pagayo_Pt003>
+	</modules>
+	
+	 <global>
+    	<resources>
+    	    <pt003_setup>
+    	        <setup>
+    	            <module>Pagayo_Pt003</module>
+				  <class>Mage_Eav_Model_Entity_Setup</class>
+				</setup>
+				<connection>
+				  <use>default_setup</use>
+				</connection>
+    	    </pt003_setup>
+    	</resources>
+     </global>    
+     
+     <adminhtml>
+          <acl>
+             <resources>
+                 <admin>
+                     <children>
+                         <system>
+                             <children>
+                                 <config>
+                                     <children>
+                                         <pagayopt003>
+                                             <title>Theme Jewelry</title>
+                                         </pagayopt003>
+                                     </children>
+                                 </config>
+                             </children>
+                         </system>
+                    </children>
+                </admin>
+            </resources>
+         </acl>
+     </adminhtml>
+    
+</config>

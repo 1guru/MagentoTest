@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config>
+
+    <tabs>
+        <pagayo translate="label">
+            <label>Pagayo</label>
+            <sort_order>300</sort_order>
+        </pagayo>
+    </tabs>
+	
+	<sections>
+        <pagayopt003>
+        	<label>Theme Jewelry</label>
+        	<tab>pagayo</tab>
+        	<class>pagayo-section</class>
+        	<frontend_type>text</frontend_type>
+        	<sort_order>300</sort_order>
+        	<show_in_default>1</show_in_default>
+        	<show_in_website>1</show_in_website>
+        	<show_in_store>1</show_in_store>
+        	<groups>
+        	    <generalinformation translate="label">
+        	    	<label>General Information</label>
+        	        <comment><![CDATA[&#10003; Pagayo Theme Jewelry successfully installed]]></comment>
+        	        <expanded>1</expanded>
+        	        <sort_order>10</sort_order>
+        	        <show_in_default>1</show_in_default>
+        	        <show_in_website>1</show_in_website>
+        	        <show_in_store>1</show_in_store>
+        	    </generalinformation>
+        	    <manual translate="label">
+        	    	<label>Manual</label>
+        	        <comment><![CDATA[<p><b><a href="http://www.pagayo.com/wiki/manuals/" target="_blank">Read manual &rarr;</a></b></p><p>On <a href="http://www.pagayo.com" target="_blank">www.pagayo.com</a> you find all manuals for themes and extensions from Pagayo.</p>]]></comment>
+        	        <expanded>1</expanded>
+        	        <sort_order>20</sort_order>
+        	        <show_in_default>1</show_in_default>
+        	        <show_in_website>1</show_in_website>
+        	        <show_in_store>1</show_in_store>
+        	    </manual>
+        	</groups>
+        </pagayopt003>
+    </sections>
+    
+</config>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Pagayo_Pt003>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Pagayo_Pt003>
+    </modules>
+</config>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <main translate="title" module="main">
+            <title>Pagayo</title>
+            <sort_order>1000</sort_order>
+            <children>
+                <pt003 translate="title" module="main">
+                    <title>Theme Jewelry</title>
+                    <sort_order>300</sort_order>
+                    <action>adminhtml/system_config/edit/section/pagayopt003</action>
+                </pt003>
+            </children>
+        </main>
+    </menu>
+</config>

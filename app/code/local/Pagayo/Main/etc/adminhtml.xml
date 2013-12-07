@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <main translate="title" module="main">
+            <title>Pagayo</title>
+            <sort_order>1000</sort_order>
+            <children>
+                <ext translate="title" module="main">
+                    <title>Pagayo Extensions Store</title>
+                    <sort_order>10</sort_order>
+                    <action>adminhtml/system_config/edit/section/pagayostore</action>
+                </ext>
+            </children>
+        </main>
+    </menu>
+</config>

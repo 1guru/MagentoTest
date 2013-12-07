@@ -1,0 +1,96 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php //echo $this->getChildHtml() ?>
+<?php $footerbox1 = Mage::getModel('cms/block')->load('pt003-footer-box1'); ?> 
+<?php $footerbox2 = Mage::getModel('cms/block')->load('pt003-footer-box2'); ?> 
+<?php $footerbox3 = Mage::getModel('cms/block')->load('pt003-footer-box3'); ?> 
+<?php $footerbox4 = Mage::getModel('cms/block')->load('pt003-footer-box4'); ?> 
+<?php $footerbox5 = Mage::getModel('cms/block')->load('pt003-footer-box5'); ?> 
+<?php $footersocial = Mage::getModel('cms/block')->load('pt003-footer-social'); ?> 
+
+<div class="footer-container">
+	<div class="footer">
+	
+		<?php //FOOTER 1 ?>
+		<div class="footer1-container">
+		    <div class="footer1">
+				<div class="newsletter">	
+					<div class="headline"><?php echo $this->__('Newsletter') ?></div>	    	
+		    		<?php echo $this->getChildHtml('left.newsletter') ?>
+		    	</div>
+		        
+		        <div class="footer-social">
+		        	<div class="headline"><?php echo $footersocial->getTitle(); ?></div>
+    				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt003-footer-social')->toHtml() ?>
+    			</div>
+		    </div>
+		    <div class="clearer"></div>
+		</div>
+		
+		<?php //FOOTER 2 ?>
+		<div class="footer2-container">
+			<div class="footer2">
+				<div class="box1">
+        			<div class="headline"><?php echo $footerbox1->getTitle(); ?></div>
+        			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt003-footer-box1')->toHtml() ?>
+        		</div>
+        		<div class="box2">
+        			<div class="headline"><?php echo $footerbox2->getTitle(); ?></div>
+        			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt003-footer-box2')->toHtml() ?>
+        		</div>
+        		<div class="box3">
+        			<div class="headline"><?php echo $footerbox3->getTitle(); ?></div>
+        			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt003-footer-box3')->toHtml() ?>
+        		</div>
+        		<div class="box4">
+        			<div class="headline"><?php echo $footerbox4->getTitle(); ?></div>
+        			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt003-footer-box4')->toHtml() ?>
+        		</div>
+        		<div class="box5">
+        			<div class="headline"><?php echo $footerbox5->getTitle(); ?></div>
+        			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt003-footer-box5')->toHtml() ?>
+        		</div>
+				<div class="clearer"></div>
+		    </div>
+		</div>
+		
+		<?php //FOOTER 3 ?>
+		<div class="footer3-container">
+			<div class="footer3">
+				<div class="footer-payments">
+					<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt003-footer-payments')->toHtml() ?>
+				</div>
+				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt003-footer-links')->toHtml() ?>
+    			<div class="copyright">
+					<?php echo $this->getCopyright() ?>
+				</div>
+				<div class="clearer"></div>
+		    </div>
+		</div>
+		
+	</div>
+</div>
