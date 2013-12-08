@@ -2468,7 +2468,7 @@ a.link-cart{
 .products-grid .product-image { 
 	display: block; 
 	width: 210px; 
-	height: 210px; 
+	/*height: 210px; */
 	padding: 10px 10px 0; 
 }
 
