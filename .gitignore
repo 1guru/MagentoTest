@@ -9,3 +9,4 @@ var/backups/
 var/log/
 var/package/
 var/report/
+nbproject/
