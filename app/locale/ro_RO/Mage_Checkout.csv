@@ -209,6 +209,7 @@
 "Thank you for your purchase!","Iti multumim pentru comanda facuta!"
 "There are <a href=""%s""><strong>%s items</strong></a> in your cart.","Sunt <a href=""%s""><strong>%s produse</strong></a> in cos."
 "There is <a href=""%s""><strong>1 item</strong></a> in your cart.","Este <a href=""%s""><strong>1 produs</strong></a> in cos."
+"There is <a href=""%s"">1 item</a> in your cart.","Este <a href=""%s"">1 produs</a> in cos."
 "There is already a customer registered using this email address","Exista deja un client inregistrat cu aceasta adresa de e-mail"
 "There was an error processing your order. Please contact us or try again later.","A aparut o eroare la procesarea comenzii tale. Te rugam sa ne contactezi sau sa incerci mai tarziu."
 "This condition no longer exists","This condition no longer exists"
