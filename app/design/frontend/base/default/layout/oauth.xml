@@ -115,7 +115,7 @@
     </oauth_authorize_rejectsimple>
     <!-- EOF Reject Authorization -->
 
-    <!-- My Applications
+    <!-- My Applications-->
     <customer_account>
         <reference name="customer_account_navigation">
             <action method="addLink" translate="label" module="oauth">
@@ -124,7 +124,7 @@
                 <label>My Applications</label>
             </action>
         </reference>
-    </customer_account>-->
+    </customer_account>
 
     <oauth_customer_token_index translate="label">
         <label>Customer My Account My OAuth Applications</label>

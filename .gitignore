@@ -1,6 +1,6 @@
 hertybs
 app/etc/local.xml
-media/
+/media/
 var/cache/
 var/session/
 sitemap/
