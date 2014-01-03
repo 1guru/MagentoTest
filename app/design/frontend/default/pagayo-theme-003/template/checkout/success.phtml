@@ -30,54 +30,84 @@
 <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 <h2 class="sub-title"><?php echo $this->__('Thank you for your purchase!') ?></h2>
 
-<?php if ($this->getOrderId()):?>
-<?php if ($this->getCanViewOrder()) :?>
-    <p><?php echo $this->__('Your order # is: %s.', sprintf('<a href="%s">%s</a>', $this->escapeHtml($this->getViewOrderUrl()), $this->escapeHtml($this->getOrderId()))) ?></p>
-<?php  else :?>
-    <p><?php echo $this->__('Your order # is: %s.', $this->escapeHtml($this->getOrderId())) ?></p>
-<?php endif;?>
-    <p><?php echo $this->__('You will receive an order confirmation email with details of your order and a link to track its progress.') ?></p>
-<?php if ($this->getCanViewOrder() && $this->getCanPrintOrder()) :?>
-    <p>
-        <?php echo $this->__('Click <a href="%s" onclick="this.target=\'_blank\'">here to print</a> a copy of your order confirmation.', $this->getPrintUrl()) ?>
-        <?php echo $this->getChildHtml() ?>
-    </p>
-<?php endif;?>
-<?php endif;?>
+<?php if ($this->getOrderId()): ?>
+	<?php if ($this->getCanViewOrder()) : ?>
+		<p><?php echo $this->__('Your order # is: %s.', sprintf('<a href="%s">%s</a>', $this->escapeHtml($this->getViewOrderUrl()), $this->escapeHtml($this->getOrderId()))) ?></p>
+	<?php else : ?>
+		<p><?php echo $this->__('Your order # is: %s.', $this->escapeHtml($this->getOrderId())) ?></p>
+	<?php endif; ?>
+	<p><?php echo $this->__('You will receive an order confirmation email with details of your order and a link to track its progress.') ?></p>
+	<?php if ($this->getCanViewOrder() && $this->getCanPrintOrder()) : ?>
+		<p>
+			<?php echo $this->__('Click <a href="%s" onclick="this.target=\'_blank\'">here to print</a> a copy of your order confirmation.', $this->getPrintUrl()) ?>
+			<?php echo $this->getChildHtml() ?>
+		</p>
+	<?php endif; ?>
+<?php endif; ?>
 
 <?php if ($this->getAgreementRefId()): ?>
-    <p><?php echo $this->__('Your billing agreement # is: %s.', sprintf('<a href="%s">%s</a>', $this->escapeHtml($this->getAgreementUrl()), $this->escapeHtml($this->getAgreementRefId())))?></p>
-<?php endif;?>
+	<p><?php echo $this->__('Your billing agreement # is: %s.', sprintf('<a href="%s">%s</a>', $this->escapeHtml($this->getAgreementUrl()), $this->escapeHtml($this->getAgreementRefId()))) ?></p>
+<?php endif; ?>
 
-<?php if ($profiles = $this->getRecurringProfiles()):?>
-<p><?php echo $this->__('Your recurring payment profiles:'); ?></p>
-<ul class="disc">
-<?php foreach($profiles as $profile):?>
-<?php $profileIdHtml = ($this->getCanViewProfiles() ? sprintf('<a href="%s">%s</a>', $this->escapeHtml($this->getProfileUrl($profile)), $this->escapeHtml($this->getObjectData($profile, 'reference_id'))) : $this->escapeHtml($this->getObjectData($profile, 'reference_id')));?>
-    <li><?php echo $this->__('Payment profile # %s: "%s".', $profileIdHtml, $this->escapeHtml($this->getObjectData($profile, 'schedule_description')))?></li>
-<?php endforeach;?>
-</ul>
-<?php endif;?>
+<?php if ($profiles = $this->getRecurringProfiles()): ?>
+	<p><?php echo $this->__('Your recurring payment profiles:'); ?></p>
+	<ul class="disc">
+		<?php foreach ($profiles as $profile): ?>
+			<?php $profileIdHtml = ($this->getCanViewProfiles() ? sprintf('<a href="%s">%s</a>', $this->escapeHtml($this->getProfileUrl($profile)), $this->escapeHtml($this->getObjectData($profile, 'reference_id'))) : $this->escapeHtml($this->getObjectData($profile, 'reference_id'))); ?>
+			<li><?php echo $this->__('Payment profile # %s: "%s".', $profileIdHtml, $this->escapeHtml($this->getObjectData($profile, 'schedule_description'))) ?></li>
+		<?php endforeach; ?>
+	</ul>
+<?php endif; ?>
 
 <div class="buttons-set">
-    <button type="button" class="button" title="<?php echo $this->__('Continue Shopping') ?>" onclick="window.location='<?php echo $this->getUrl() ?>'"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
+    <button type="button" class="button" title="<?php echo $this->__('Continue Shopping') ?>" onclick="window.location = '<?php echo $this->getUrl() ?>'"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
 </div>
 <?php
 //Get Order Number & Order Total
 $order = Mage::getModel('sales/order')->loadByIncrementId(Mage::getSingleton('checkout/session')->getLastRealOrderId());
-$amount = number_format($order->getGrandTotal(),2);
+$amount = number_format($order->getGrandTotal(), 2);
+$shipping = number_format($order->getShippingAmount(), 2);
+$allitems = $order->getAllItems();
 ?>
 <script type="text/javascript">
-var fb_param = {};
-fb_param.pixel_id = '6013419943306';
-fb_param.value = '<?php echo $amount;?>';
-fb_param.currency = 'RON';
-(function(){
-  var fpw = document.createElement('script');
-  fpw.async = true;
-  fpw.src = '//connect.facebook.net/en_US/fp.js';
-  var ref = document.getElementsByTagName('script')[0];
-  ref.parentNode.insertBefore(fpw, ref);
-})();
+		var fb_param = {};
+		fb_param.pixel_id = '6013419943306';
+		fb_param.value = '<?php echo $amount; ?>';
+		fb_param.currency = 'RON';
+		(function() {
+			var fpw = document.createElement('script');
+			fpw.async = true;
+			fpw.src = '//connect.facebook.net/en_US/fp.js';
+			var ref = document.getElementsByTagName('script')[0];
+			ref.parentNode.insertBefore(fpw, ref);
+		})();
 </script>
 <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6013419943306&amp;value=0&amp;currency=RON" /></noscript>
+<?php if ($allitems): ?>
+	<script type="text/javascript">
+		try {
+			var pageTracker = _gat._getTracker("UA-xxxxx-x");
+			pageTracker._trackPageview();
+			pageTracker._addTrans(
+					"<?php echo $this->getOrderId(); ?>", // transaction ID - required
+					"<?php echo $amount; ?>", // total - required
+					"<?php echo $shipping; ?>" // shipping
+					);
+			<?php
+			foreach ($allitems as $item) {
+				?>
+				pageTracker._addItem(
+					"<?php echo $this->getOrderId(); ?>", // transaction ID
+					"<?php echo $item->getSku();?>", // SKU/code
+					"<?php echo $item->getPrice();?>", // unit price
+					"<?php echo $item->getQtyToShip();?>" // quantity - required
+					);
+				<?php
+			}
+			?>
+			pageTracker._trackTrans(); //submits transaction to the Analytics servers
+		} catch (err) {
+		}
+
+	</script>
+<?php endif; ?>
