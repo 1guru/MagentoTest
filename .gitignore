@@ -10,3 +10,6 @@ var/log/
 var/package/
 var/report/
 nbproject/
+/.buildpath
+/.project
+/.settings
