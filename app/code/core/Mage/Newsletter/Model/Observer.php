@@ -59,7 +59,7 @@ class Mage_Newsletter_Model_Observer
     public function scheduledSend($schedule)
     {
         $countOfQueue  = 3;
-        $countOfSubscritions = 20;
+        $countOfSubscritions = 300;
 
         $collection = Mage::getModel('newsletter/queue')->getCollection()
             ->setPageSize($countOfQueue)

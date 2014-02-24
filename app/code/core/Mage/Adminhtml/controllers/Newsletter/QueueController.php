@@ -170,7 +170,7 @@ class Mage_Adminhtml_Newsletter_QueueController extends Mage_Adminhtml_Controlle
     {
         // Todo: put it somewhere in config!
         $countOfQueue  = 3;
-        $countOfSubscritions = 20;
+        $countOfSubscritions = 300;
 
         $collection = Mage::getResourceModel('newsletter/queue_collection')
             ->setPageSize($countOfQueue)
