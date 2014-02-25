@@ -42,7 +42,7 @@
     rel="lightbox[rotation]" 
     title="<?php echo $maintitle ;?>"
     onclick="return false;"
-><img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($mainImageSize[0], $mainImageSize[1]); ?>" alt="<?php echo $this->htmlEscape($_product->getImageLabel());?>"
+><img itemprop="image" src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($mainImageSize[0], $mainImageSize[1]); ?>" alt="<?php echo $this->htmlEscape($_product->getImageLabel());?>"
 /></a>
 
 
