@@ -116,15 +116,17 @@
     <!-- EOF Reject Authorization -->
 
     <!-- My Applications-->
-    <customer_account>
-        <reference name="customer_account_navigation">
-            <action method="addLink" translate="label" module="oauth">
-                <name>OAuth Customer Tokens</name>
-                <path>oauth/customer_token</path>
-                <label>My Applications</label>
-            </action>
-        </reference>
-    </customer_account>
+    <remove>
+	    <customer_account>
+	        <reference name="customer_account_navigation">
+	            <action method="addLink" translate="label" module="oauth">
+	                <name>OAuth Customer Tokens</name>
+	                <path>oauth/customer_token</path>
+	                <label>My Applications</label>
+	            </action>
+	        </reference>
+	    </customer_account>
+    </remove>
 
     <oauth_customer_token_index translate="label">
         <label>Customer My Account My OAuth Applications</label>
